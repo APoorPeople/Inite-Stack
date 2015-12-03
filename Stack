@@ -1,0 +1,92 @@
+#include<iostream.h>
+#include<string.h>
+#define MAX 10
+typedef int DataType;
+//栈类
+
+class Stack
+{
+	DataType data[MAX];
+	int top;
+public:
+	Stack(){ top=0;}
+	void Push(DataType x)
+	{ 
+		if(top<MAX)
+			data[top++]=x;
+		else
+			cout<<"栈满!"<<endl;
+	}
+	DataType Pop()
+	{
+		if(top-1>=0)
+		{
+			cout<<"弹出"<<data[--top]<<endl;
+			return data[top];//data[--top];
+		}
+		else
+			cout<<"栈空!"<<endl;
+		return -1;
+	}
+	void Peer()
+	{
+	cout<<"栈顶元素："<<data[top-1]<<endl;
+	}
+	void Isempty()
+	{
+		if(top==0)
+			cout<<"栈空"<<endl;
+		else
+			cout<<"栈不空"<<endl;
+	}
+	void IsPull()
+	{
+		if(top==10)
+			cout<<"栈满"<<endl;
+		else
+			cout<<"栈不满"<<endl;
+	}
+};
+
+void main()
+{
+	Stack s;
+	s.Push(1);
+	s.Push(2);
+	s.Push(3);
+	s.Push(4);
+
+	s.Push(5);
+
+	s.Push(6);
+
+	s.Push(7);
+
+	s.Push(8);
+
+	s.Push(9);
+
+	s.Push(10);
+
+	s.Push(11);
+
+
+
+	s.Peer();
+	s.Isempty();
+	s.IsPull();
+
+	cout<<s.Pop()<<endl;
+//	s.Push(3);
+	cout<<s.Pop()<<endl;
+	cout<<s.Pop()<<endl;
+	cout<<s.Pop()<<endl;
+	cout<<s.Pop()<<endl;
+	cout<<s.Pop()<<endl;
+	cout<<s.Pop()<<endl;
+	cout<<s.Pop()<<endl;
+	cout<<s.Pop()<<endl;
+	cout<<s.Pop()<<endl;
+	cout<<s.Pop()<<endl;
+	
+}
